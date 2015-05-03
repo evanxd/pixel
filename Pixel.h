@@ -1,6 +1,8 @@
 #ifndef _Pixel_H_
 #define _Pixel_H_
 
+#include "Arduino.h"
+
 #define MAX7219_REG_NOOP         0x00
 #define MAX7219_REG_DIGIT0       0x01
 #define MAX7219_REG_DIGIT1       0x02
@@ -22,12 +24,14 @@ class Pixel
     byte dataPin;
     byte loadPin;
     byte clockPin;
-    byte matrix[][];
+    void sendCommand(byte key, byte value);
+    void sendData(byte data);
 
   public:
-    Pixel(byte dataPin, byte loadPin, byte clockPin, byte* matrix);
+    Pixel(byte dataPin, byte loadPin, byte clockPin);
     void setIntensity(int intensity);
     void render();
+    void drawDot(int x, int y);
 };
 
 #endif
