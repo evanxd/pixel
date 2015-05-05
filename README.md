@@ -7,6 +7,17 @@ A game engine for LED matrix.
 3. Restart the Arduino IDE.
 
 ## Usage
+Import and declare Pixel in your project.
+```
+#include <Pixel.h>
+/**
+ * 10 is the Data In pin.
+ * 16 is the CS pin.
+ * 14 is the Clock pin.
+ */
+Pixel pixel(10, 16, 14); 
+```
+
 Draw a dot on the coordinate (0, 0) of LED matrix.
 ```
 pixel.matrix[0][0] = true;
