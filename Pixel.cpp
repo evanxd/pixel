@@ -26,27 +26,22 @@ Pixel::Pixel(byte _dataPin, byte _loadPin, byte _clockPin)
   }
 }
 
+void Pixel::render()
+{
+  for (int i = 0; i < MATRIX_WIDTH; i++) {
+    int y = 0;
+    for (int j = 0; j < MATRIX_HEIGHT; j++) {
+      if (matrix[i][j]) {
+        y += (1 << j);
+      }
+    }
+    sendCommand(i + 1, y);
+  }
+}
+
 void Pixel::setIntensity(int intensity)
 {
   sendCommand(MAX7219_REG_INTENTSITY, intensity);
-}
-
-void Pixel::render()
-{
-
-}
-
-void Pixel::drawDot(int x, int y)
-{
-  matrix[x][y] = true;
-  y = 0;
-  for (int i = 0; i < MATRIX_HEIGHT; i++) {
-    if (matrix[x][i]) {
-      y += (1 << i);
-    }
-  }
-  x = x + 1;
-  sendCommand(x, y);
 }
 
 void Pixel::sendCommand(byte key, byte value)

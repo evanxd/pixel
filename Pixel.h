@@ -26,15 +26,14 @@ class Pixel
     byte dataPin;
     byte loadPin;
     byte clockPin;
-    bool matrix[MATRIX_WIDTH][MATRIX_HEIGHT];
     void sendCommand(byte key, byte value);
     void sendData(byte data);
 
   public:
     Pixel(byte dataPin, byte loadPin, byte clockPin);
-    void setIntensity(int intensity);
+    bool matrix[MATRIX_WIDTH][MATRIX_HEIGHT];
     void render();
-    void drawDot(int x, int y);
+    void setIntensity(int intensity);
 };
 
 #endif
