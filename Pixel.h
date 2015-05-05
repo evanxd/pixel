@@ -17,6 +17,8 @@
 #define MAX7219_REG_SCAN_LIMIT   0x0b
 #define MAX7219_REG_SHUTDOWN     0x0c
 #define MAX7219_REG_DISPLAY_TEST 0x0f
+#define MATRIX_WIDTH             8
+#define MATRIX_HEIGHT            8
 
 class Pixel
 {
@@ -24,6 +26,7 @@ class Pixel
     byte dataPin;
     byte loadPin;
     byte clockPin;
+    bool matrix[MATRIX_WIDTH][MATRIX_HEIGHT];
     void sendCommand(byte key, byte value);
     void sendData(byte data);
 
