@@ -1,5 +1,5 @@
 # Pixel
-A game engine for LED matrix.
+A game engine for a LED matrix controlled by MAX7219.
 
 ## Installation
 1. Switch to the `Arduino/libraries` directory in terminal.
