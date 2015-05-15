@@ -30,7 +30,7 @@ class Pixel
 
   public:
     Pixel(byte dataPin, byte loadPin, byte clockPin);
-    bool matrix[MATRIX_WIDTH][MATRIX_HEIGHT];
+    int matrix[MATRIX_WIDTH][MATRIX_HEIGHT];
     void render();
     void setIntensity(int intensity);
     void sendCommand(byte key, byte value);

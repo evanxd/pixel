@@ -20,12 +20,12 @@ Pixel pixel(10, 16, 14);
 
 Draw a dot on the coordinate (0, 0) of LED matrix.
 ```
-pixel.matrix[0][0] = true;
+pixel.matrix[0][0] = 1;
 pixel.render();
 ```
 
 Clean the (0, 0) dot.
 ```
-pixel.matrix[0][0] = false;
+pixel.matrix[0][0] = 0;
 pixel.render();
 ```
