@@ -26,7 +26,6 @@ class Pixel
     byte dataPin;
     byte loadPin;
     byte clockPin;
-    void sendCommand(byte key, byte value);
     void sendData(byte data);
 
   public:
@@ -34,6 +33,7 @@ class Pixel
     bool matrix[MATRIX_WIDTH][MATRIX_HEIGHT];
     void render();
     void setIntensity(int intensity);
+    void sendCommand(byte key, byte value);
 };
 
 #endif
